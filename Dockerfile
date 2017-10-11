@@ -9,7 +9,7 @@ RUN rm -rf /var/lib/apt/lists/*
 
 ADD libraries /miktex
 
-initexmf --admin --user-roots=/miktex/libraries
-initexmf --admin --update-fndb
+RUN initexmf --admin --user-roots=/miktex/libraries
+RUN initexmf --admin --update-fndb
 
 USER miktex
