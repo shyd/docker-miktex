@@ -7,7 +7,8 @@ RUN apt-get update && \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ADD libraries /miktex
+RUN mkdir /miktex/libraries
+COPY libraries /miktex/libraries
 
 RUN initexmf --admin --user-roots=/miktex/libraries
 RUN initexmf --admin --update-fndb
